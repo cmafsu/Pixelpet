@@ -14,16 +14,25 @@ public class Pet {
     }
 
 
-    public String getName(){
+    public String getName()
+    {
         return name;
     }
-    public String getMood() {
+    public String setName(String name)
+    {
+        this.name = name;
+        return name;
+    }
+    public String getMood()
+    {
         return mood;
     }
-    public int getHunger() {
+    public int getHunger()
+    {
         return hunger;
     }
-    public int getHealth() {
+    public int getHealth()
+    {
         return health;
     }
 }
