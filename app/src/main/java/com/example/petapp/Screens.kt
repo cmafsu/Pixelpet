@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 
 package com.example.petapp
 
@@ -16,6 +16,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 
 
+@ExperimentalMaterial3Api
 object Screens {
     @Composable
     fun HomeScreen(navController: NavController) {
@@ -34,6 +35,11 @@ object Screens {
                 onClick = { navController.navigate("petStats") }
             ) {
                 Text(text = "Shop")
+            }
+            Button(
+                onClick = { navController.navigate("settings") }
+            ) {
+                Text(text = "Settings")
             }
         }
     }
@@ -60,6 +66,31 @@ object Screens {
             Text(text = "Pet mood: ${pet.mood}")
             Text(text = "Pet hunger: ${pet.hunger}")
             Text(text = "Pet health: ${pet.health}")
+        }
+    }
+    @Composable
+    fun settingsScreen() {
+
+        Column {
+            //language selection
+            Button(
+                onClick = { }
+            ) {
+            Text("Language")
+        }
+
+            // Volume settings
+            Button(
+                onClick = { }
+            ) {
+                Text("Volume")
+            }
+            //TTS settings
+            Button(
+                onClick = { }
+            ) {
+                Text("Text-to-speech")
+            }
         }
     }
 }
